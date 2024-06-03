@@ -13,3 +13,5 @@
   {{ $secureCSS := $css | resources.Fingerprint "sha512" -}}
   <link rel="stylesheet" href="{{ $secureCSS.Permalink }}" media="screen" integrity="{{ $secureCSS.Data.Integrity }}" crossorigin="anonymous">
 {{ end -}}
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
