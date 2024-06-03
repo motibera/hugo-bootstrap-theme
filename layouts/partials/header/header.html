@@ -8,10 +8,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
-        {{ if isset .Site.Params "mainmenulogo" }}
-        <img src="{{ .Site.Params.mainMenuLogo | relURL }}" alt="logo" width="30" height="24"
-          class="d-inline-block align-text-top">
-        {{ end }}
+        <img src="/images/logo/logo_circles.png" alt="logo" class="d-inline-block align-text-top" style="height:1.5em;padding-right:0.2em;" />
         {{ .Site.Title }}
       </a>
 
@@ -22,14 +19,11 @@
 
       <!-- Main Menu -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="menu-main navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="menu-main navbar-nav ms-auto mb-2 mb-lg-0">
           {{- $current := . -}}
-          {{- $section := $current.Section -}}
           {{ range .Site.Menus.main -}}
-          {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+          {{- $active := and (eq .Name "Home") (eq $current.Title "Levonto Technologies") -}}
           {{- $active = or $active (eq .Name $current.LinkTitle) -}}
-          {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
-          {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors")) -}}
           {{ if .HasChildren }}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
