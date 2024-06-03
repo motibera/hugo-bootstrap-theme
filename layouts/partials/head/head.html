@@ -1,5 +1,13 @@
 <head>
-    {{ block "head/google-tag" . }}{{ partial "head/google-tag.html" . }}{{ end }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DC37JQ5M7P"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DC37JQ5M7P');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ block "head/content-security-policy" . }}{{ partial "head/content-security-policy.html" . }}{{ end }}
