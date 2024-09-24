@@ -8,7 +8,7 @@
 
       <!-- Brand -->
       <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
-        <img src="/images/logo/logo_circles.png" alt="logo" class="d-inline-block align-text-top" style="height:1.5em;padding-right:0.2em;" />
+        <img src="/images/logo/logo.png" alt="logo" class="d-inline-block align-text-top" style="height:1.5em;padding-right:0.2em;" />
         <span class="small-caps">{{ .Site.Title }}</span>
       </a>
 
@@ -22,7 +22,7 @@
         <ul class="menu-main navbar-nav ms-auto mb-2 mb-lg-0">
           {{- $current := . -}}
           {{ range .Site.Menus.main -}}
-          {{- $active := and (eq .Name "Home") (eq $current.Title "Levonto Technologies") -}}
+          {{- $active := and (eq .Name "Home") (eq $current.Title "Motibera") -}}
           {{- $active = or $active (eq .Name $current.LinkTitle) -}}
           {{ if .HasChildren }}
           <li class="nav-item dropdown">
